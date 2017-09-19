@@ -1,3 +1,5 @@
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -10,6 +12,7 @@ public class run {
         methods.task3();
         methods.task4();
         methods.task5();
+        methods.task6();
     }
 
 
@@ -79,5 +82,22 @@ public class run {
             total += current;
         }
         System.out.println("The total is: " + total);
+    }
+
+    private void task6() {
+        System.out.println("Task 6: Taxi Rates");
+        int passengers = inputNumber("How many passengers?");
+        int distance = inputNumber("What is the distance?");
+        if (distance > 0) {
+            double cost = 3 + ((distance - 1) * 2);
+            if (passengers > 4) {
+                cost *= 1.5;
+            }
+            System.out.println("The total cost is " + NumberFormat.getCurrencyInstance(new Locale("en", "GB"))
+                    .format(cost));
+        } else {
+            System.out.println("Invalid input,\nPlease try again.");
+            task6();
+        }
     }
 }
