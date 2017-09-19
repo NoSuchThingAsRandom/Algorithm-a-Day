@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class Task001 {
-    void run(){
+    static void run(){
         Scanner in=new Scanner(System.in);
         System.out.println("Enter the first number: ");
         try {
