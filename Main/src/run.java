@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class run {
@@ -40,11 +41,24 @@ public class run {
         }
     }
 
+    private void task3(){
+        int[] diceRolls =new int[3];
+        Random rand=new Random();
+        for(int x=0;x<diceRolls.length;x++){
+            diceRolls[x]=rand.nextInt(6)+1;
+            System.out.println("Dice roll "+x+" was "+diceRolls[x]);
+        }
+
+
+    }
+
 
 
     public static void main(String[] args) {
         run methods =new run();
-        methods.task1();
-        methods.task2();
+/*        methods.task1();
+        methods.task2();*/
+        methods.task3();
+        //methods.task4();
     }
 }
